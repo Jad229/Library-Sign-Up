@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Story Keeper Bookstore</title>
+  </head>
+  <body>
+    <form action="index.html" method="post">
+      <h1>The Story Keeper Book Store</h1>
+
+      <label for="fname">First Name:</label>
+      <input class="entry-fields" type="text" name="fname" placeholder="Ex: Jane" required>
+      <label for="fname">REQUIRED</label>
+
+      <label for="lname">Last Name:</label>
+      <input class="entry-fields" type="text" name="lname" placeholder="Ex: Doe" required>
+      <label for="lname">REQUIRED</label>
+
+      <label for="password">Password:</label>
+      <input class="entry-fields" type="password" name="password" placeholder="Ex: paSsw0R$d123" required>
+      <label for="password">REQUIRED</label>
+
+      <label for="id">Seller ID:</label>
+      <input class="entry-fields" type="number" name="id" placeholder="Ex: 108762" required>
+      <label for="id">REQUIRED</label>
+
+      <label for="phonenumber">Phone Number:</label>
+      <input class="entry-fields" type="text" name="phonenumber" placeholder="Ex: 861-783-2000" required>
+      <label for="phonenumber">REQUIRED</label>
+
+      <label for="email">Email:</label>
+      <input class="entry-fields" type="text" name="email" placeholder="Ex: example@email.com">
+
+      <input type="checkbox" name="emailConfirmation" value="">
+      <label for="emailConfirmation">Check for email confirmation</label>
+
+      <label for="transactionType">Select a Transaction</label>
+      <select class="dropdown-menu" name="transactionType">
+          <option value="">Search a Book Sellers Account</option>
+          <option value="">Customer's Book Purchase</option>
+          <option value="">Customer's Book Return</option>
+          <option value="">Update a Customer's Book Order</option>
+          <option value="">Cancel a Customer's Book Order</option>
+          <option value="">Search for a Book</option>
+          <option value="">Create a New Customer Acoount</option>
+      </select>
+
+      <input type="submit" name="submitButton" value="Submit">
+      <button type="button" name="resetButton">Reset</button>
+    </form>
+  </body>
+</html>
