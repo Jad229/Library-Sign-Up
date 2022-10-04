@@ -1,0 +1,17 @@
+/* #F8EDE3
+   #DFD3C3
+   #D0B8A8
+   #7D6E83 */
+
+body{
+  background-color: #F8EDE3;
+}
+
+form{
+  width: 50%;
+  height: auto;
+}
+
+.entry-container{
+  margin: 10px;
+}
