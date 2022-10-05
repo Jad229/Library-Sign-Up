@@ -3,15 +3,95 @@
    #D0B8A8
    #7D6E83 */
 
-body{
-  background-color: #F8EDE3;
+html, body{
+  padding: 0;
+  margin: 0;
+  background-color: #D0B8A8;
+  height: 100%;
+  font-family: Outfit;
+}
+
+.content-wrap{
+  padding: 1%;
+  position: relative;
+  height: 100%;
+}
+
+#collage-bg{
+  opacity: 0.4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110%;
+}
+
+label{
+  display: inline-block;
+  width: 30%;
+  text-align: left;
+}
+
+.form-container{
+  padding: 2%;
+  height: 790px;
 }
 
 form{
+  padding: 2%;
+  position: relative;
+  border-radius: 10px;
+  background-color: #DFD3C3;
+  background-image: url("images/ruled-paper-texture.jpg");
+  background-size: cover;
+  font-size: 1.3rem;
   width: 50%;
-  height: auto;
+  height: 75%;
+  margin: auto;
+  opacity: 0.95;
+
+}
+
+h1{
+  text-align: center;
+  color: #7D6E83  ;
 }
 
 .entry-container{
-  margin: 10px;
+  margin: 2% 0;
+  display: block;
+}
+
+.entry-fields{
+  display: inline-block;
+  width: 18%;
+  padding: 1% 10%;
+
+}
+
+.required-label{
+  text-align: right;
+  float: right;
+  font-weight: bold;
+  color: orangered;
+}
+
+.checkbox-container{
+  width: 100%;
+  display: inline-block;
+}
+
+#email-label{
+  width: 60%;
+}
+
+.btn{
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #D0B8A8;
+  box-shadow: 2px 2px #7D6E83;
+}
+.button-container{
+  float: right;
 }
