@@ -11,6 +11,12 @@ html, body{
   font-family: Outfit;
 }
 
+nav{
+  background-color: #F8EDE3;
+  padding: 10px;
+  color: #D0B8A8;
+}
+
 .content-wrap{
   padding: 1%;
   position: relative;
@@ -94,4 +100,13 @@ h1{
 }
 .button-container{
   float: right;
+}
+
+label[for*="option"]{
+width: 10%;
+font-size: 1rem;
+}
+
+input[type="radio"]{
+  display: inline-block;
 }
