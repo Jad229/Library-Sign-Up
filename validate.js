@@ -24,13 +24,19 @@ form.addEventListener("submit", function(e){
 
 function validate(){
     let passwordReg = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])/;
+    let idReg = /^[0-9]{8}$/;
 
     if(userPassword.value.length > 10){
         alert("Password cannot exceed 10 characters");
     }
-    if(!passwordReg.test(userPassword.value)){
+    else if(!passwordReg.test(userPassword.value)){
         alert("Password must have at least 1 uppercase letter, 1 special character and 1 numeric character");
     }
+
+    if(!idReg.test(userID.value)){
+        alert("ID should only contain exactly an 8-digit number");
+    }
+
 }
 
 function verify(){
