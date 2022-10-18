@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+  <script src="validate.js" defer></script>
 </head>
 
 <body>
@@ -21,64 +22,64 @@
     <img id="collage-bg" src="images/book-collage.jpg" alt="collage of books">
 
     <div class="form-container">
-      <form action="index.html" method="post">
+      <form id="seller-signup" action="index.html" method="GET">
         <h1>The Story Keeper Book Store</h1>
 
         <div class="entry-container">
           <label for="fname">Seller's First Name:</label>
-          <input class="entry-fields" type="text" name="fname" placeholder="Ex: Jane" required>
+          <input class="entry-fields" id="fname" type="text" name="fname" placeholder="Ex: Jane" required>
           <label class="required-label" for="fname">REQUIRED</label>
         </div>
 
         <div class="entry-container">
           <label for="lname">Seller's Last Name:</label>
-          <input class="entry-fields" type="text" name="lname" placeholder="Ex: Doe" required>
+          <input class="entry-fields" id="lname" type="text" name="lname" placeholder="Ex: Doe" required>
           <label class="required-label" for="lname">REQUIRED</label>
         </div>
 
         <div class="entry-container">
           <label for="password">Seller's Password:</label>
-          <input class="entry-fields" type="password" name="password" placeholder="Ex: paSsw0R$d123" required>
+          <input class="entry-fields" id="password" type="password" name="password" placeholder="Ex: paSsw0R$d123" required>
           <label class="required-label" for="password">REQUIRED</label>
         </div>
 
         <div class="entry-container">
-          <label for="id">Book Seller ID:</label>
-          <input class="entry-fields" type="number" name="id" placeholder="Ex: 108762" required>
-          <label class="required-label" for="id">REQUIRED</label>
+          <label for="id-num">Book Seller ID:</label>
+          <input class="entry-fields" id="id-num" type="number" name="id" placeholder="Ex: 108762" required>
+          <label class="required-label" for="id-num">REQUIRED</label>
         </div>
 
         <div class="entry-container">
-          <label for="phonenumber">Seller's Phone Number:</label>
-          <input class="entry-fields" type="text" name="phonenumber" placeholder="Ex: 861-783-2000" required>
-          <label class="required-label" for="phonenumber">REQUIRED</label>
+          <label for="phone-number">Seller's Phone Number:</label>
+          <input class="entry-fields" id="phone-number" type="text" name="phonenumber" placeholder="Ex: 861-783-2000" required>
+          <label class="required-label" for="phone-number">REQUIRED</label>
         </div>
 
         <div class="entry-container">
           <label for="email">Book Seller's Email:</label>
-          <input class="entry-fields" type="text" name="email" placeholder="Ex: example@email.com">
+          <input class="entry-fields" id="email" type="text" name="email" placeholder="Ex: example@email.com">
         </div>
 
         <div class="entry-container checkbox-container">
-          <input type="checkbox" name="emailConfirmation" value="">
+          <input type="checkbox" id="emailConfirmation" name="emailConfirmation" value="">
           <label id="email-label" for="emailConfirmation">Check for email confirmation</label>
         </div>
 
         <div class="entry-container">
           <label for="transactionType">Select a Transaction</label>
-          <select class="dropdown-menu" name="transactionType">
+          <select class="dropdown-menu" id="transactionType" name="transactionType">
             <option value="">Search a Book Sellers Account</option>
             <option value="">Customer's Book Purchase</option>
             <option value="">Customer's Book Return</option>
             <option value="">Update a Customer's Book Order</option>
             <option value="">Cancel a Customer's Book Order</option>
             <option value="">Search for a Book</option>
-            <option value="">Create a New Customer Acoount</option>
+            <option value="">Create a New Customer Account</option>
           </select>
         </div>
 
         <div class="button-container">
-          <input class="btn" type="submit" name="submitButton" value="Submit">
+          <input class="btn" type="submit" name="submitButton" onsubmit="validate()" value="Submit">
           <button class="btn" type="button" name="resetButton">Reset</button>
         </div>
       </form>
