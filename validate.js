@@ -17,43 +17,43 @@ const sellers =[
     },
     {
         name:"Paul",
-        lname:"FireBlade",
+        lname:"Fireblade",
         password:"pa$sw0Rd12",
         ID:"12345672",
     },
     {
-        name:"Destiny",
-        lname:"IceStorm",
+        name:"destiny",
+        lname:"Icestorm",
         password:"pa$sw0Rd12",
         ID:"12345673",
     },
     {
-        name:"Penny",
-        lname:"LifeBringer",
+        name:"penny",
+        lname:"Lifebringer",
         password:"pa$sw0Rd12",
         ID:"12345674",
     },
     {
         name:"Leo",
-        lname:"DragonFlame",
+        lname:"Dragonflame",
         password:"pa$sw0Rd12",
         ID:"12345675",
     },
     {
         name:"Scarlet",
-        lname:"ManaBloom",
+        lname:"Manabloom",
         password:"pa$sw0Rd12",
         ID:"12345676",
     },
     {
         name:"Astra",
-        lname:"GemKnight",
+        lname:"Gemknight",
         password:"pa$sw0Rd12",
         ID:"12345677",
     },
     {
         name:"Skye",
-        lname:"StarCaster",
+        lname:"Starcaster",
         password:"pa$sw0Rd12",
         ID:"12345678",
     }
@@ -67,10 +67,10 @@ form.addEventListener("submit", function(e){
 
 
 function validate(){
-    let passwordReg = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])/;
+    let passwordReg = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
     let idReg = /^[0-9]{8}$/;
     let phoneReg = /^[0-9]{3}\s?-?[0-9]{3}\s?-?[0-9]{4}$/;
-    let emailReg = /[\S]+@[a-zA-Z]{2,5}[\.][a-zA-Z]+/;
+    let emailReg = /\S+@[a-zA-Z]{2,5}[.][a-zA-Z]+/;
 
     if(userPassword.value.length > 10){
         alert("Password cannot exceed 10 characters");
@@ -95,6 +95,7 @@ function validate(){
 
 function verify(){
     let matchFound = false;
+
     sellers.forEach(function(seller){
         if(firstName.value === seller.name && lastName.value === seller.lname
         && userPassword.value === seller.password && userID.value === seller.ID){
@@ -109,4 +110,8 @@ function verify(){
     else {
         alert("No matching records found.");
     }
+}
+
+function clearForm(){
+    form.reset();
 }
