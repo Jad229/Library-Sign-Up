@@ -8,7 +8,7 @@ html, body{
   margin: 0;
   background-color: #D0B8A8;
   height: 100%;
-  font-family: Outfit;
+  font-family: Outfit, 'sans-serif';
 }
 
 nav{
@@ -47,7 +47,7 @@ form{
   position: relative;
   border-radius: 10px;
   background-color: #DFD3C3;
-  background-image: url("images/ruled-paper-texture.jpg");
+  background-image: url("../images/ruled-paper-texture.jpg");
   background-size: cover;
   font-size: 1.3rem;
   width: 50%;
@@ -109,3 +109,5 @@ font-size: 1rem;
 input[type="radio"]{
   display: inline-block;
 }
+
+/*styles for directory*/
