@@ -97,6 +97,10 @@ h1{
   background-color: #D0B8A8;
   box-shadow: 2px 2px #7D6E83;
 }
+
+.btn:hover{
+  box-shadow: none;
+}
 .button-container{
   float: right;
 }

@@ -46,19 +46,8 @@
      <h1>The Story Keeper Bookstore</h1>
      <button><a href="directory.html">Home</a></button>
      <div class="table">
-         <?php
-             //Makes DB connection
-             $servername = "sql1.njit.edu";
-             $username = "jad229";
-             $password = "password123";
-             $dbname = "jad229";
-             $con = mysqli_connect($servername,$username,$password,$dbname);
-             if (mysqli_connect_errno())
-             {
-               echo "Failed to connect to MySQL: " . mysqli_connect_error();
-             }
-
-             $result = mysqli_query($con,"SELECT * FROM `Customer Purchase Info` ");
+         <?php include "connection.php";
+             $result = mysqli_query($con,"SELECT * FROM Purchases ");
 
              echo "<table border='1'>
              <tr>

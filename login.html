@@ -9,22 +9,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
   <script src="validate.js" defer></script>
-
-
 </head>
 
 <body>
-  <nav>
-    <a href="radio.html">Radio</a>
-    <a href="checkbox.html">Checkboxes</a>
-  </nav>
 
   <div class="content-wrap">
 
     <img id="collage-bg" src="images/book-collage.jpg" alt="collage of books">
 
     <div class="form-container">
-      <form id="seller-signup" action="index.html" method="GET">
+      <form id="seller-signup" action="login.php" onsubmit="return validate()" method="post">
         <h1>The Story Keeper Book Store</h1>
 
         <div class="entry-container">
@@ -70,27 +64,25 @@
         <div class="entry-container">
           <label for="transactionType">Select a Transaction</label>
           <select class="dropdown-menu" id="transactionType" name="transactionType">
-            <option value="">Search a Book Sellers Account</option>
-            <option value="">Customer's Book Purchase</option>
-            <option value="">Customer's Book Return</option>
-            <option value="">Update a Customer's Book Order</option>
-            <option value="">Cancel a Customer's Book Order</option>
-            <option value="">Search for a Book</option>
-            <option value="">Create a New Customer Account</option>
+            <option value="1" selected>Search a Book Sellers Account</option>
+            <option value="2">Customer's Book Purchase</option>
+            <option value="3">Customer's Book Return</option>
+            <option value="4">Update a Customer's Book Order</option>
+            <option value="5">Cancel a Customer's Book Order</option>
+            <option value="6">Search for a Book</option>
+            <option value="7">Create a New Customer Account</option>
           </select>
         </div>
 
         <div class="button-container">
-          <input class="btn" type="submit" name="submitButton" onsubmit="validate()" value="Submit">
+          <input class="btn" type="submit" name="submitButton" value="Submit">
           <button class="btn" type="button" name="resetButton" onclick="clearForm()">Reset</button>
         </div>
       </form>
+
+
     </div>
   </div>
-
-  <!-- <div class="img-container">
-    <img id="book-img" src="images/book-collage.jpg" alt="river of books">
-  </div> -->
 
 </body>
 

@@ -15,7 +15,6 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-
         }
         .table{
             margin-top: 2%;
@@ -46,39 +45,58 @@
      <h1>The Story Keeper Bookstore</h1>
      <button><a href="directory.html">Home</a></button>
      <div class="table">
-         <?php
-             //Makes DB connection
-             $servername = "sql1.njit.edu";
-             $username = "jad229";
-             $password = "password123";
-             $dbname = "jad229";
-             $con = mysqli_connect($servername,$username,$password,$dbname);
-             if (mysqli_connect_errno())
-             {
-               echo "Failed to connect to MySQL: " . mysqli_connect_error();
-             }
+         <?php include "Connection.php";
 
-             $result = mysqli_query($con,"SELECT * FROM `Bookseller Info` ");
+             $sellerID = $_GET['sellerID'];
+
+             $sql = "SELECT
+                     	b.BooksellerID, b.FirstName, b.LastName, b.PhoneNumber, b.Email,
+                     	o.ShippingAddress, o.CustomerID, o.PurchaseID,
+                        c.FirstName, c.LastName,
+                        p.CustomerPurchase, p.PurchaseDateTime, p.PaymentType
+                     FROM Booksellers b
+                     INNER JOIN Orders o
+                     	ON o.BooksellerID = b.BooksellerID AND b.BooksellerID = $sellerID
+                     INNER JOIN Customers c
+                     	ON o.CustomerID = c.CustomerID
+                     INNER JOIN Purchases p
+                     	ON o.PurchaseID = p.PurchaseID";
+
+             $result = mysqli_query($con,$sql);
 
              echo "<table border='1'>
              <tr>
-                 <th>BooksellerID</th>
-                 <th>First Name</th>
-                 <th>Last Name</th>
-                 <th>Password</th>
+                 <th>Bookseller First Name</th>
+                 <th>Bookseller Last Name</th>
+                 <th>Bookseller ID</th>
                  <th>Phone Number</th>
                  <th>Email</th>
+                 <th>Customer First Name</th>
+                 <th>Customer Last Name</th>
+                 <th>Customer ID</th>
+                 <th>Purchases</th>
+                 <th>Purchase Date & Time</th>
+                 <th>Payment Type</th>
+                 <th>Shipping Address</th>
+                 <th>Purchase ID</th>
              </tr>";
 
              while($row = mysqli_fetch_array($result))
              {
                  echo "<tr>";
+                 echo "<td>" . $row[1] . "</td>";
+                 echo "<td>" . $row[2] . "</td>";
                  echo "<td>" . $row['BooksellerID'] . "</td>";
-                 echo "<td>" . $row['FirstName'] . "</td>";
-                 echo "<td>" . $row['LastName'] . "</td>";
-                 echo "<td>" . $row['Password'] . "</td>";
                  echo "<td>" . $row['PhoneNumber'] . "</td>";
                  echo "<td>" . $row['Email'] . "</td>";
+                 echo "<td>" . $row['FirstName'] . "</td>";
+                 echo "<td>" . $row['LastName'] . "</td>";
+                 echo "<td>" . $row['CustomerID'] . "</td>";
+                 echo "<td>" . $row['CustomerPurchase'] . "</td>";
+                 echo "<td>" . $row['PurchaseDateTime'] . "</td>";
+                 echo "<td>" . $row['PaymentType'] . "</td>";
+                 echo "<td>" . $row['ShippingAddress'] . "</td>";
+                 echo "<td>" . $row['PurchaseID'] . "</td>";
                  echo "</tr>";
              }
 
