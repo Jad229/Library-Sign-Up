@@ -1,11 +1,10 @@
-const form = document.querySelector("#seller-signup");
 
-const userPassword = document.querySelector("#password");
-const userID = document.querySelector("#id-num");
-const phoneNumber = document.querySelector("#phone-number");
-const email = document.querySelector("#email");
-
-function validate(){
+function ValidateLogin(){
+    const form = document.querySelector("#user-form");
+    const userPassword = document.querySelector("#password");
+    const userID = document.querySelector("#id-num");
+    const phoneNumber = document.querySelector("#phone-number");
+    const email = document.querySelector("#email");
 
     let hasEmptyField = false;
     let passwordReg = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
@@ -45,7 +44,7 @@ function validate(){
         form[4].focus();
         return false;
     }
-    else if(document.querySelector("#emailConfirmation").checked){
+    else if(document.getElementById("#emailConfirmation").checked){
         if(!emailReg.test(email.value)){
             alert("Please input a valid email address. Email must contain an @ followed by a period and an" +
                 "email domain that consists of 2 to 5 characters.");
@@ -61,6 +60,33 @@ function validate(){
     }
 }
 
+function ValidatePurchaseForm(){
+    const form = document.querySelector("#user-form");
+
+    const paymentType = document.querySelector("#payment-type");
+    const orderType = document.querySelector("#order-type");
+
+    let hasEmptyField = false;
+
+    for(let i = 0; i < 7; i++){
+        if(form[i].value === ''){
+            hasEmptyField = true;
+        }
+    }
+
+    if(hasEmptyField){
+        alert("Please fill in all the required fields.");
+        return false;
+    } else if (orderType.value.toLowerCase() === "online" && paymentType.value.toLowerCase() !== "credit"){
+        alert("Payment Type must be Credit for Online Purchases");
+        return false;
+    }else {
+        form.submit();
+    }
+
+}
+
 function clearForm(){
+    const form = document.querySelector("#user-form");
     form.reset();
 }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet"><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script src="validate.js" defer></script>
 </head>
 
@@ -18,8 +18,8 @@
     <img id="collage-bg" src="images/book-collage.jpg" alt="collage of books">
 
     <div class="form-container">
-        <form id="seller-signup" action="purchase.php" onsubmit="return validate()" method="post">
-            <h1>The Story Keeper Book Store</h1>
+        <form id="user-form" action="purchase.php" onsubmit="return ValidatePurchaseForm()" method="post">
+            <h1>The Story Keeper Book Store Purchase Form</h1>
 
             <div class="entry-container">
                 <label for="fname">Customer's First Name:</label>
@@ -34,44 +34,39 @@
             </div>
 
             <div class="entry-container">
-                <label for="password">Customer's Password:</label>
-                <input class="entry-fields" id="password" type="password" name="password" placeholder="Ex: paSsw0R$d1" >
-                <label class="required-label" for="password">REQUIRED</label>
-            </div>
-
-            <div class="entry-container">
-                <label for="id-num">Book Seller ID:</label>
+                <label for="id-num">Customer ID:</label>
                 <input class="entry-fields" id="id-num" type="number" name="id" placeholder="Ex: 108762" >
                 <label class="required-label" for="id-num">REQUIRED</label>
             </div>
 
             <div class="entry-container">
-                <label for="phone-number">Seller's Phone Number:</label>
-                <input class="entry-fields" id="phone-number" type="text" name="phonenumber" placeholder="Ex: 861-783-2000">
-                <label class="required-label" for="phone-number">REQUIRED</label>
+                <label for="customerPurchase">Customer Purchase:</label>
+                <input class="entry-fields" id="customerPurchase" type="text" name="customerPurchase" placeholder="Ex: Dragonic Runes">
+                <label class="required-label" for="customerPurchase">REQUIRED</label>
             </div>
 
             <div class="entry-container">
-                <label for="email">Book Seller's Email:</label>
-                <input class="entry-fields" id="email" type="text" name="email" placeholder="Ex: example@email.com">
-            Customer
-
-            <div class="entry-container checkbox-container">
-                <input type="checkbox" id="emailConfirmation" name="emailConfirmation" value="">
-                <label id="email-label" for="emailConfirmation">Check for email confirmation</label>
+                <label for="time">Date & Time of Purchase:</label>
+                <input class="entry-fields" id="time" type="datetime-local" name="time" placeholder="Ex: February 5, 2022 12:00AM">
+                <label class="required-label" for="time">REQUIRED</label>
             </div>
 
             <div class="entry-container">
-                <label for="transactionType">Select a Transaction</label>
-                <select class="dropdown-menu" id="transactionType" name="transactionType">
-                    <option value="1" selected>Search a Book Sellers Account</option>
-                    <option value="2">Customer's Book Purchase</option>
-                    <option value="3">Customer's Book Return</option>
-                    <option value="4">Update a Customer's Book Order</option>
-                    <option value="5">Cancel a Customer's Book Order</option>
-                    <option value="6">Search for a Book</option>
-                    <option value="7">Create a New Customer Account</option>
-                </select>
+                <label for="payment-type">Payment Type:</label>
+                <input class="entry-fields" type="text" id="payment-type" name="payment-type" placeholder="Cash/Credit">
+                <label class="required-label" for="payment-type">REQUIRED</label>
+            </div>
+
+            <div class="entry-container">
+                <label for="order-type">Order Type:</label>
+                <input class="entry-fields" type="text" id="order-type" name="order-type" placeholder="In Store/Online">
+                <label class="required-label" for="order-type">REQUIRED</label>
+            </div>
+
+            <div class="entry-container">
+                <label for="address">Shipping Address:</label>
+                <input class="entry-fields" type="text" id="address" name="address" placeholder="Ex: 100 Firecat Lane">
+                <label class="required-label" for="address">REQUIRED</label>
             </div>
 
             <div class="button-container">

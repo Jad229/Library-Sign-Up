@@ -18,7 +18,7 @@
     <img id="collage-bg" src="images/book-collage.jpg" alt="collage of books">
 
     <div class="form-container">
-      <form id="seller-signup" action="login.php" onsubmit="return validate()" method="post">
+      <form id="user-form" action="login.php" onsubmit="return ValidateLogin()" method="post">
         <h1>The Story Keeper Book Store</h1>
 
         <div class="entry-container">
@@ -64,7 +64,7 @@
         <div class="entry-container">
           <label for="transactionType">Select a Transaction</label>
           <select class="dropdown-menu" id="transactionType" name="transactionType">
-            <option value="1" selected>Search a Book Sellers Account</option>
+            <option value="1">Search a Book Sellers Account</option>
             <option value="2">Customer's Book Purchase</option>
             <option value="3">Customer's Book Return</option>
             <option value="4">Update a Customer's Book Order</option>
