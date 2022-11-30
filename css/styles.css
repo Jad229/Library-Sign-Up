@@ -43,7 +43,7 @@ label{
 }
 
 form{
-  padding: 2%;
+  padding: 2% 2% 5% 2%;
   position: relative;
   border-radius: 10px;
   background-color: #DFD3C3;
@@ -51,7 +51,7 @@ form{
   background-size: cover;
   font-size: 1.3rem;
   width: 50%;
-  height: 75%;
+  height: auto;
   margin: auto;
   opacity: 0.95;
 

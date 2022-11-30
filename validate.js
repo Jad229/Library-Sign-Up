@@ -6,17 +6,12 @@ function ValidateLogin(){
     const phoneNumber = document.querySelector("#phone-number");
     const email = document.querySelector("#email");
 
-    let hasEmptyField = false;
     let passwordReg = /(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/;
     let idReg = /^[0-9]{8}$/;
     let phoneReg = /^[0-9]{3}\s?-?[0-9]{3}\s?-?[0-9]{4}$/;
     let emailReg = /\S+@[a-zA-Z]{2,5}[.][a-zA-Z]+/;
 
-    for(let i = 0; i < 5; i++){
-        if(form[i].value === ''){
-            hasEmptyField = true;
-        }
-    }
+    let hasEmptyField = checkEmpty(form, 5);
 
     if(hasEmptyField){
         alert("Please fill in all the required fields.");
@@ -66,13 +61,7 @@ function ValidatePurchaseForm(){
     const paymentType = document.querySelector("#payment-type");
     const orderType = document.querySelector("#order-type");
 
-    let hasEmptyField = false;
-
-    for(let i = 0; i < 7; i++){
-        if(form[i].value === ''){
-            hasEmptyField = true;
-        }
-    }
+    let hasEmptyField = checkEmpty(form, 7);
 
     if(hasEmptyField){
         alert("Please fill in all the required fields.");
@@ -86,7 +75,31 @@ function ValidatePurchaseForm(){
 
 }
 
+function ValidateReturnForm(){
+    const form = document.querySelector("#user-form");
+
+    let hasEmptyField = checkEmpty(form, 2);
+
+    if(hasEmptyField) {
+        alert("Please fill in all the required fields.");
+        return false;
+    } else {
+        form.submit();
+    }
+}
+
 function clearForm(){
     const form = document.querySelector("#user-form");
     form.reset();
+}
+
+function checkEmpty(form, numOfEntries){
+    let hasEmptyField = false;
+
+    for(let i = 0; i < numOfEntries; i++){
+        if(form[i].value === ''){
+            hasEmptyField = true;
+        }
+    }
+    return hasEmptyField;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>The Story Keeper Bookstore</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet"><script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="validate.js" defer></script>
+</head>
+
+<body>
+
+<div class="content-wrap">
+
+    <img id="collage-bg" src="images/book-collage.jpg" alt="collage of books">
+
+    <div class="form-container">
+        <form id="user-form" action="create.php" onsubmit="return ValidateReturnForm()" method="post">
+            <h1>The Story Keeper Book Store: Create Form</h1>
+
+            <div class="entry-container">
+                <label for="first-name">Customer's First Name:</label>
+                <input class="entry-fields" id="first-name" type="text" name="first-name" placeholder="Ex: 111" >
+                <label class="required-label" for="first-name">REQUIRED</label>
+            </div>
+            <div class="entry-container">
+                <label for="last-name">Customer's Last Name:</label>
+                <input class="entry-fields" id="last-name" type="text" name="last-name" placeholder="Ex: 123" >
+                <label class="required-label" for="last-name">REQUIRED</label>
+            </div>
+
+            <div class="entry-container">
+                <label for="id-num">Customer's ID Number:</label>
+                <input class="entry-fields" id="id-num" type="number" name="id-num" placeholder="Ex: 123" >
+                <label class="required-label" for="id-num">REQUIRED</label>
+            </div>
+
+            <div class="button-container">
+                <input class="btn" type="submit" name="submitButton" value="Submit">
+                <button class="btn" type="button" name="resetButton" onclick="clearForm()">Reset</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+</body>
+
+</html>

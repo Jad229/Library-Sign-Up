@@ -25,23 +25,20 @@
                     header("Location: purchase.html");
                     exit();
                 } else if($transactionType === "3") {
-                    header("Location: purchase.html");
+                    header("Location: return.html");
                     exit();
                 } else if($transactionType === "4") {
-                   header("Location: purchase.html");
+                   header("Location: update.html");
                    exit();
                 } else if($transactionType === "5") {
-                   header("Location: purchase.html");
+                   header("Location: cancel.html");
                    exit();
                 } else if($transactionType === "6") {
-                   header("Location: purchase.html");
+                   header("Location: create.html");
                    exit();
-                } else if($transactionType === "7") {
-                   header("Location: purchase.html");
-                   exit();
-                } else {
-                   echo "No matching records found!";
                 }
+            } else {
+                echo "No matching records found!";
             }
         }
     }
