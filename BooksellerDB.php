@@ -4,7 +4,7 @@
  <head>
      <meta charset="utf-8">
      <title>The Story Keeper Bookstore</title>
-     <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="css/styles.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Space+Mono&display=swap" rel="stylesheet">
@@ -41,26 +41,36 @@
      </style>
 
  </head>
- <body style="background-image: url('https://images.unsplash.com/photo-1627793741864-1a9ec3ef2ba0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1429&q=80'); background-repeat: no-repeat; background-size: cover;">
-     <h1>The Story Keeper Bookstore</h1>
-     <button><a href="directory.html">Home</a></button>
+ <body>
+      <h1>The Story Keeper Bookstore</h1>
+      <nav>
+          <a href="login.html"><button>Search Bookseller Records</button></a>
+          <a href="purchase.html"><button>Customer Purchase/Order</button></a>
+          <a href="return.html"><button>Customer Returns</button></a>
+          <a href="update.html"><button>Update Customer Order</button></a>
+          <a href="cancel.html"><button>Cancel Customer Order</button></a>
+          <a href="create.html"><button>Create Customer Account</button></a>
+      </nav>
      <div class="table">
          <?php include "Connection.php";
 
              $sellerID = $_GET['sellerID'];
 
              $sql = "SELECT
-                     	b.BooksellerID, b.FirstName, b.LastName, b.PhoneNumber, b.Email,
-                     	o.ShippingAddress, o.CustomerID, o.PurchaseID,
-                        c.FirstName, c.LastName,
-                        p.CustomerPurchase, p.PurchaseDateTime, p.PaymentType
-                     FROM Booksellers b
-                     INNER JOIN Orders o
-                     	ON o.BooksellerID = b.BooksellerID AND b.BooksellerID = $sellerID
-                     INNER JOIN Customers c
-                     	ON o.CustomerID = c.CustomerID
-                     INNER JOIN Purchases p
-                     	ON o.PurchaseID = p.PurchaseID";
+                          b.BooksellerID, b.FirstName, b.LastName, b.PhoneNumber, b.Email,
+                          o.ShippingAddress, o.CustomerID, o.PurchaseID,
+                          c.FirstName, c.LastName,
+                          p.CustomerPurchase, p.PurchaseDateTime, p.PaymentType
+                       FROM Booksellers b
+                       INNER JOIN Orders o
+                           ON o.BooksellerID = b.BooksellerID
+                       INNER JOIN Customers c
+                           ON o.CustomerID = c.CustomerID
+                       INNER JOIN Purchases p
+                           ON o.CustomerID = p.CustomerID
+                       Where b.BooksellerID = $sellerID";
+
+
 
              $result = mysqli_query($con,$sql);
 

@@ -15,8 +15,14 @@
 
 <div class="content-wrap">
 
-    <img id="collage-bg" src="images/book-collage.jpg" alt="collage of books">
-
+    <nav>
+        <a href="login.html"><button>Search Bookseller Records</button></a>
+        <a href="purchase.html"><button>Customer Purchase/Order</button></a>
+        <a href="return.html"><button>Customer Returns</button></a>
+        <a href="update.html"><button>Update Customer Order</button></a>
+        <a href="cancel.html"><button>Cancel Customer Order</button></a>
+        <a href="create.html"><button>Create Customer Account</button></a>
+    </nav>
     <div class="form-container">
         <form id="user-form" action="purchase.php" onsubmit="return ValidatePurchaseForm()" method="post">
             <h1>The Story Keeper Book Store Purchase Form</h1>
@@ -35,7 +41,7 @@
 
             <div class="entry-container">
                 <label for="id-num">Customer ID:</label>
-                <input class="entry-fields" id="id-num" type="number" name="id" placeholder="Ex: 108762" >
+                <input class="entry-fields" id="id-num" type="number" name="id-num" placeholder="Ex: 108762" >
                 <label class="required-label" for="id-num">REQUIRED</label>
             </div>
 
@@ -65,7 +71,7 @@
 
             <div class="entry-container">
                 <label for="address">Shipping Address:</label>
-                <input class="entry-fields" type="text" id="address" name="address" placeholder="Ex: 100 Firecat Lane">
+                <input class="entry-fields" type="text" id="address" name="address" placeholder="1000 Fireelf court">
                 <label class="required-label" for="address">REQUIRED</label>
             </div>
 
@@ -73,6 +79,7 @@
                 <input class="btn" type="submit" name="submitButton" value="Submit">
                 <button class="btn" type="button" name="resetButton" onclick="clearForm()">Reset</button>
             </div>
+
         </form>
 
 

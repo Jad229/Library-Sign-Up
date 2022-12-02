@@ -7,38 +7,42 @@ error_reporting(E_ALL);
 $customerID = trim($_POST["customerId"]);
 $purchaseID = trim($_POST["purchaseId"]);
 
-$sql = "SELECT * FROM Purchases
+confirmAlert("You are about to CANCEL this order. Are you sure you want to delete?");
+
+$sql = "SELECT * FROM Orders
     WHERE CustomerID = $customerID AND PurchaseID = $purchaseID";
 
 $result = mysqli_query($con, $sql);
 
 if(mysqli_num_rows($result) > 0){
-    $sql2 = "DELETE FROM Purchases
+    $sql2 = "DELETE FROM Orders
             WHERE CustomerID = $customerID AND PurchaseID = $purchaseID";
 
     if ($con->query($sql2) === TRUE) {
-        alert("Customer Purchase Returned.");
+        alert("Customer Purchase Cancelled.");
 
     } else {
         echo "Error: " . $sql2 . "<br>" . $con->error;
     }
 
 } else  {
-    alert("Before you return an item please make sure the item was purchased from the store. Was it purchased from The Story Keeper Book Store? If not we cannot accept the return");
+    alert("Before you cancel an order please make sure the purchase ID and customer ID are valid");
 }
 
 function alert($msg) {
     echo "<script type='text/javascript'>
         alert('$msg');
-        window.location.replace('return.html');
+        window.location.replace('cancel.html');
     </script>";
 }
-
 function confirmAlert($msg) {
     echo "<script type='text/javascript'>
-        confirm('$msg');
-        var prompt = confirm('$msg');
-        window.relocate('return.html');
+       var prompt = confirm('$msg');
+       if(!prompt){
+        window.relocate(update.html);
+       }else {
+        window.relocate(cancel.html);
+       }
     </script>";
 }
 
